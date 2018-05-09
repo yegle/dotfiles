@@ -61,6 +61,7 @@ precmd() {
     vcs_info
 }
 
+zstyle ':vcs_info:git*' check-for-changes true
 zstyle ':vcs_info:git*+set-message:*' hooks git-highlight-branch
 
 function +vi-git-highlight-branch () {
