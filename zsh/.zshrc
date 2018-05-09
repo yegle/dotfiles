@@ -60,3 +60,9 @@ zstyle ':vcs_info:hg*' get-revision true
 precmd() {
     vcs_info
 }
+
+zstyle ':vcs_info:git*+set-message:*' hooks git-highlight-branch
+
+function +vi-git-highlight-branch () {
+    hook_com[branch]="%{$fg_bold[red]%}${hook_com[branch]}%{$reset_color%}"
+}
