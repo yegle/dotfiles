@@ -3,7 +3,15 @@ ZSH_THEME="gentoo"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git tmux mercurial zsh-history-substring-search zsh-syntax-highlighting)
+plugins=(
+    command-not-found
+    git
+    mercurial
+    tmux
+    zsh-history-substring-search
+    zsh-syntax-highlighting
+)
+
 source $ZSH/oh-my-zsh.sh
 unsetopt cdablevars
 
