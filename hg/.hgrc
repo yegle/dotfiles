@@ -1,0 +1,43 @@
+[ui]
+merge = vimdiff
+origbackuppath = $HOME/tmp
+
+[merge-tools]
+vimdiff.executable = vimdiff
+vimdiff.args = -f -d $output -M $local $base $other -c "wincmd J" -c "set modifiable" -c "set write"
+vimdiff.premerge = keep
+
+[extensions]
+share =
+strip =
+pager =
+hgext.extdiff=
+convert =
+
+[pager]
+ignore = status
+
+[alias]
+track = tracked --addinclude
+sync = !$HG pull && $HG rebase -d p4head
+fixup = !$HG commit -m 'MULTI:FIXUP'
+uploadchain = !$HG push -r . --no-update-description
+uploadall = !$HG push -r 'draft() - troubled() - obsolete()' --no-update-description
+borrow = !cd `$HG root` && p4 pack -aN -c $1 | sed "/^\t/s/\t//p ; /^====.*====\$/,\$p ; d" | $HG import -e - -p0
+
+[revsetalias]
+@ = .
+
+[extdiff]
+cmd.vdiff = kdiff3
+cmd.bcompare=
+cmd.vimdiff = vimdiff
+
+[color]
+changeset.shortest = underline bold red
+changeset.remaining = black bold
+
+[trainingwheels]
+pushdirty=false
+
+%include ~/xyz.hgrc
