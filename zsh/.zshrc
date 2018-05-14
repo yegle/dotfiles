@@ -5,6 +5,7 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(
     command-not-found
+    docker
     git
     mercurial
     tmux
@@ -46,6 +47,7 @@ bindkey '^N' history-substring-search-down
 
 zle_highlight=(default:bold)
 
+export GOROOT="$HOME/go"
 export GOPATH="$HOME/gopkg"
 export PATH=/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$GOPATH/bin:$GOROOT/bin:$PATH
 export TZ='America/Los_Angeles'
