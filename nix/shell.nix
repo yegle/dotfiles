@@ -26,19 +26,21 @@ stdenv.mkDerivation rec {
     (python.buildEnv.override {
         ignoreCollisions = true;
         extraLibs = with pythonPackages; [
+            altair
             ipython
+            matplotlib
             notebook
             pandas
-            matplotlib
         ];
     })
     (python3.buildEnv.override {
         ignoreCollisions = true;
         extraLibs = with python3Packages; [
+            altair
             ipython
+            matplotlib
             notebook
             pandas
-            matplotlib
             virtualenv
         ];
     })
