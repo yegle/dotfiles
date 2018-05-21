@@ -19,6 +19,7 @@ ignore = status
 
 [alias]
 track = tracked --addinclude
+sync = !$HG pull && $HG rebase -d p4head
 fixup = !$HG commit -m 'MULTI:FIXUP'
 uploadchain = !$HG push -r . --no-update-description
 uploadall = !$HG push -r 'draft() - troubled() - obsolete()' --no-update-description
