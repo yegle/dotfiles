@@ -23,7 +23,8 @@ ALIAS=$HOME/alias.zsh
 # XYZ customization
 XYZ=$HOME/xyz.zsh
 
-if [[ -e $NIX ]] then
+if [[ -e $NIX ]]
+then
     export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
     source $NIX
 
