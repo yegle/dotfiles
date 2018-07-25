@@ -34,6 +34,9 @@ then
     fi
 fi
 
+export GOROOT="$HOME/go"
+export GOPATH="$HOME/gopkg"
+
 if [[ -e $ALIAS ]]; then source $ALIAS; fi
 if [[ -e $XYZ ]]; then source $XYZ; fi
 
@@ -48,8 +51,6 @@ bindkey '^N' history-substring-search-down
 
 zle_highlight=(default:bold)
 
-export GOROOT="$HOME/go"
-export GOPATH="$HOME/gopkg"
 export PATH=/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$GOPATH/bin:$GOROOT/bin:$PATH
 export TZ='America/Los_Angeles'
 
@@ -70,3 +71,6 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-highlight-branch
 function +vi-git-highlight-branch () {
     hook_com[branch]="%{$fg_bold[red]%}${hook_com[branch]}%{$reset_color%}"
 }
+
+autoload -U select-word-style
+select-word-style bash
