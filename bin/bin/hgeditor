@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+DIFF=$(chg diff)
+if [[ ! -z "$DIFF" ]]
+then
+  echo 'HG: ------------------------ >8 ------------------------' >> $1
+  echo $DIFF >> $1
+fi
+editor $1 '+/^\(HG:\)\@!'
+exit $?
