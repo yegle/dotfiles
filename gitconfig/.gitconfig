@@ -4,6 +4,7 @@
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     xl = log --branches --graph  --oneline --simplify-by-decoration
+    up = switch
 [diff]
     tool = vimdiff
 [diftool]
