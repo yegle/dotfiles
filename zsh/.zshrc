@@ -75,3 +75,8 @@ function +vi-git-highlight-branch () {
 
 autoload -U select-word-style
 select-word-style bash
+
+if type gh > /dev/null;
+then
+    eval $(gh completion -s zsh)
+fi
